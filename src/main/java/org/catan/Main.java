@@ -1,17 +1,29 @@
 package org.catan;
 
-import org.catan.models.HexagonGrid;
-
-import javax.swing.*;
+import org.catan.enums.PlayerColours;
+import java.util.ArrayList;
 
 public class Main{
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Catan");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 800);
-        frame.add(new HexagonGrid());
-        frame.setVisible(true);
+
+        Player asmaa = new Player("Asmaa", PlayerColours.BLUE);
+        Player silas = new Player("Silas", PlayerColours.RED);
+        Player mai = new Player("Mai",PlayerColours.WHITE);
+        Player thomas = new Player("Thomas",PlayerColours.ORANGE);
+
+        ArrayList<Player> players = new ArrayList<>();
+
+        players.add(asmaa);
+        players.add(silas);
+        players.add(mai);
+        players.add(thomas);
+
+        Game game = new Game(players);
+        game.playGame();
+
+
+
     }
 
 }
